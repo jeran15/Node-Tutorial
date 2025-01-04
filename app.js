@@ -14,3 +14,4 @@ sayHi(names.john);
 sayHi(names.peter);
 
 console.log(data);
+//  sum.addValues();
