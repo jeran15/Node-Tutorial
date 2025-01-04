@@ -121,3 +121,28 @@ Import: You can import specific members from a module or the whole module.
 
 8. Promises
 
+    Pending: The initial state. The operation has not yet completed.
+    Fulfilled: The operation completed successfully, and the then handler will be called.
+    Rejected: The operation failed, and the catch handler will be called.
+
+    eg : 
+            function fetchUserData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const success = true;
+                    if (success) {
+                        resolve({ name: "Alice", age: 25 });
+                    } else {
+                        reject("Failed to fetch user data.");
+                    }
+                }, 2000); // Simulates a 2-second delay
+            });
+        }
+
+        fetchUserData()
+            .then((user) => {
+                console.log("User Data:", user); // Output: User Data: { name: "Alice", age: 25 }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
