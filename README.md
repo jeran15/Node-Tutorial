@@ -146,3 +146,53 @@ Import: You can import specific members from a module or the whole module.
             .catch((error) => {
                 console.error(error);
             });
+
+05/01/2025
+
+# Built - in - module
+
+1. OS(Operating System) - The os module provides utilities to get information about the operating system.
+        Retrieve platform, architecture, and CPU information.
+        Access system uptime, memory, and network interfaces.
+        eg : 
+        
+        const os = require('os');
+        console.log('Platform:', os.platform());
+        console.log('Total Memory:', os.totalmem());
+        console.log('Free Memory:', os.freemem());
+        console.log('CPU Info:', os.cpus());
+
+2. FS(File System) - The fs module provides methods to interact with the file system, allowing operations like reading, writing, and modifying files or directories.
+    
+    File operations: Read, write, append, rename, delete.
+    Directory operations: Create, remove, and read contents.
+
+
+3. PATH - The path module simplifies working with file and directory paths across platforms.
+
+4. FS-modules(async/sync) :
+    1. sync : Operations are executed one after another, in a sequential manner. Each task waits for the previous one to complete before starting.
+        A synchronous operation blocks the execution of the program until it finishes. This means the program cannot do anything else while waiting for the task to complete.
+
+        usecase - Good for simple scripts where tasks need to be performed in a specific sequence and performance is not a concern.
+
+    2. async :  Operations are initiated and run in the background. Other parts of the program can continue executing while the operation is being processed.
+        
+        An asynchronous operation does not block the execution of the program. It uses callbacks, promises, or async/await to handle results.
+
+        Use Case: Ideal for tasks like reading files, making HTTP requests, or accessing databases, where waiting for a task to complete would slow down the program unnecessarily.
+
+        1 Execution - Non-blocking, tasks run independently of others.
+        2 Blocking - No, program continues executing other tasks.
+        3 Performance - Faster; allows multiple operations simultaneously.
+        4 Usecase - Real-time apps, servers, file I/O, database queries.
+        5 Error Handling - Requires callbacks, promises, or async/await.
+    
+5. HTTP module : 
+    When we install node we automatically install npm(node package manage).Enabling easy installation and management of libraries, tools, and frameworks.
+    NPM usage : 
+    1. reuse our own code in other projects
+    2. use code witten by other developers
+    3. share out own solution for outher developers as well - when it comes npm pacakages there's a good chance that if there is a bug someone else has already faced it and as a result already fixed in a package or there is working solution. 
+
+

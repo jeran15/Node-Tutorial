@@ -1,17 +1,9 @@
-// setInterval(() =>{
-//     console.log("Hello World");
-// },1000);
+//npm - globel command, comes with code when you download node.js
+//npm --version
 
-const names = require('./4-names')
-const sayHi = require('./5-utils')
-const data = require('./6-aulternative-flavour')
-require('./7-mine-grenade')
+//local dependency - use it only in this particular project
+//npm i <packageName>
 
-console.log(names);
-
-sayHi('Miranda');
-sayHi(names.john);
-sayHi(names.peter);
-
-console.log(data);
-//  sum.addValues();
+//global dependency - use it in any project
+//npm install -g <packageName>
+//sudo npm install -g <packageName> (mac)
