@@ -1,0 +1,18 @@
+{
+  "name": "node-tutorial",
+  "version": "1.0.0",
+  "description": "Declare :\tCreating a variable but not giving it a value.----- let x;\r Initialize : Assigning a value to a variable (can happen during or after declaration).----- x = 10; or let y = 5;\r Define:\tDeclaring and initializing a variable simultaneously.---- let z = 20;",
+  "main": "1-intro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "loadash": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
