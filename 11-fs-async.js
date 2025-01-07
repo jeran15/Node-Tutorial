@@ -22,7 +22,7 @@ console.log('start');
                 console.log(err);
                 return;
             }
-            console.log('done with this task');
+            console.log(`done with this task ${result}`);
         }
     )
     }
