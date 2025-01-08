@@ -289,5 +289,54 @@ EVENT LOOP :
 
     Event Loop seinario : ![alt text](image-10.png) - The idea based on time consuming the perfact way to handle that one we use event loop(call-back) that's why above subscribers excample shown.
     
+# Event Emitter
+    The EventEmitter class in Node.js is a core module that facilitates the implementation of the event-driven programming model.
+    
+    - An EventEmitter allows objects to:
+        Emit events when something happens.
+        Listen to those events with registered event listeners (callbacks).
 
-                  
+    - What is Event-Driven Architecture?
+        Event-driven architecture (EDA) is a design pattern where the flow of a program is determined by events, such as user actions, sensor outputs, or messages from other systems.
+
+        In an event-driven system:
+           1. Events represent a signal that something has occurred (e.g., a button click, a file upload, or a server request).
+           2. Listeners (or Handlers) are functions or code blocks that react to those events
+    
+    -EventEmitter in Node.js
+        The EventEmitter class in Node.js is a built-in mechanism for creating and handling events in an event-driven architecture. It’s particularly useful for building asynchronous applications.
+    
+# Strems
+    Streams in Node.js are objects that allow you to read data from a source or write data to a destination in a continuous manner. They are particularly useful for handling large data sets efficiently, as they process data in chunks rather than loading the entire data into memory.
+
+    - How Streams Work
+        Streams operate in chunks of data, making them memory-efficient. Instead of waiting for all data to be loaded, they process it piece by piece.
+    
+    Types of Streams in Node.js
+        1.Readable Streams:
+
+            Used for reading data.
+            Example: Reading from a file or receiving data over a network.
+        2.Writable Streams:
+
+            Used for writing data.
+            Example: Writing to a file or sending data over a network.
+        3.Duplex Streams:
+
+            Can read and write data simultaneously.
+            Example: A network socket.
+        4.Transform Streams:
+
+            A special type of duplex stream that can modify or transform the data while reading and writing.
+            Example: Compression or encryption.
+
+    Benefits of Using Streams
+        Memory Efficiency:
+
+        Processes data in chunks rather than loading the entire content into memory.
+        Time Efficiency:
+
+        Starts processing data immediately instead of waiting for the entire data set.
+        Scalability:
+
+        Ideal for handling large files or streaming data over the network.

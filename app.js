@@ -15,3 +15,4 @@
 //2. npm init -y (everything default)
 //3. manual aproch (create package.json in the root, create properties etc)
 
+
