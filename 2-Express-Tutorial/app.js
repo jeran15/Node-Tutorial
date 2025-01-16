@@ -1,8 +1,23 @@
-const http = require('http')
+const express = require('express');
+const app = express();
+const path = require('path')
 
-const server = http.createServer((req,res)=>{
-    console.log('User hit the request')
-    res.end('Home page')
+app.use(express.static('./public'));
+
+// app.get('/',(req,res)=>{
+//     res.sendFile(path.resolve(__dirname,'./navbar-app/index.html'));
+// adding to static assets
+// SSR - server side rendering
+// })
+
+app.get('/about',(req,res)=>{
+    res.send('About Page');
 })
 
-server.listen(5000)
+app.all('*',(req,res)=>{
+    res.status(404).send('<h1>Resource not found</h1>');
+})
+
+app.listen(5000,()=>{
+    console.log('Server is listening on port 5000');
+})
