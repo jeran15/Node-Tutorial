@@ -1,21 +1,21 @@
 const express = require('express')
 const app = express()
-const { products } = require('./data')
-
+const logger = require('./logger')
+const authorize = require('./authorize')
 //req => middleware => res
-const logger = (req,res,next)=>{
-    const method = req.method;
-    const url = req.url;
-    const year = new Date().getFullYear();
-    console.log(method,url,year);
-    next()
-}
+app.use([logger,authorize])
 
-app.get('/',logger,(req,res)=>{
+app.get('/',(req,res)=>{
     res.send('<h1>Home Page</h1>')
 })
-app.get('/about',logger,(req,res)=>{
+app.get('/about',(req,res)=>{
     res.send('<h4>About Page</h4>')
+})
+app.get('/products',(req,res)=>{
+    res.send('products')
+})
+app.get('/items',(req,res)=>{
+    res.send('items')
 })
 app.listen(5000,()=>{
     console.log('Server is listening on port 5000...')
