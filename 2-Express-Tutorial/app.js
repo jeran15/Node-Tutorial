@@ -1,22 +1,24 @@
 const express = require('express')
 const app = express()
-const logger = require('./logger')
-const authorize = require('./authorize')
-//req => middleware => res
-app.use([logger,authorize])
+let { people} = require('./data')
 
-app.get('/',(req,res)=>{
-    res.send('<h1>Home Page</h1>')
+
+//static assets
+app.use(express.static('./methods-public'))
+//parse form data
+app.use(express.urlencoded({extended:false}))
+app.get('/api/people',(req,res)=>{
+    res.status(200).json({success:true,data:people})
 })
-app.get('/about',(req,res)=>{
-    res.send('<h4>About Page</h4>')
+
+app.post('/login',(req,res)=>{
+    const {name} = req.body
+    if(name){
+        return res.status(200).send(`Welcome ${name}`)
+    }
+    res.status(401).send('Please provide credentials')
 })
-app.get('/products',(req,res)=>{
-    res.send('products')
-})
-app.get('/items',(req,res)=>{
-    res.send('items')
-})
+
 app.listen(5000,()=>{
     console.log('Server is listening on port 5000...')
 })
